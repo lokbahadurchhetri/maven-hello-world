@@ -39,3 +39,17 @@ jobs:
         
       # run tests!
       - run: mvn integration-test
+workflows:
+  version: 2
+  build-n-deploy:
+    jobs:
+      - build:
+          filters:
+            tags:
+              only: /master/
+      - deploy:
+          requires:
+            - build
+          filters:
+            tags:
+              only: /production/
