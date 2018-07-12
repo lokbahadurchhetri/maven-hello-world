@@ -46,10 +46,10 @@ workflows:
       - build:
           filters:
             tags:
-              only: /master/
+              only: master
       - deploy:
           requires:
             - build
           filters:
             tags:
-              only: /production/
+              only: production
