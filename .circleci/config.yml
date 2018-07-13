@@ -47,9 +47,3 @@ workflows:
           filters:
             tags:
               only: master
-      - deploy:
-          requires:
-            - build
-          filters:
-            tags:
-              only: production
